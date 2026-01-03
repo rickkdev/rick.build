@@ -3,7 +3,7 @@ slug: developer-activity-purchase-intent
 title: What developer activity actually tells you about who's ready to buy
 date: 2025-01-14
 category: growth
-excerpt: After analyzing developer activity across 20+ organizations, I found that accounts with high dev engagement are 3x more likely to be at the bottom of the sales funnel. Here's what that means for developer-focused companies.
+excerpt: After analyzing developer activity across 20+ organizations, I found that accounts with high dev engagement are 2-3x more likely to be at the bottom of the sales funnel. Here's what that means for developer-focused companies.
 ---
 
 Developers have always been fundamental drivers of tech purchasing decisions. According to the [2023 StackOverflow Survey](https://survey.stackoverflow.co/2023/#section-purchasing-technology-influence-on-technology-purchases), a staggering 66% of developers influence what their companies buy—a finding echoed by [BCG's research](https://www.bcg.com/publications/2022/developers-influence-in-enterprise-tech-sales) on developer influence in enterprise sales. Stripe understood this early on—their entire business strategy was built around winning developers first. Instead of competing on enterprise sales pitches, they focused on streamlined docs, dead-simple integrations, and a developer experience that made engineers actually want to use their product. The result? Developers integrated Stripe across ecommerce everywhere, choosing it over stitching together multiple payment providers and handling integrations themselves. That developer-focused growth strategy is what made Stripe win payments.
@@ -18,7 +18,9 @@ After working with multiple customers and analyzing their data, here's what stoo
 
 - The deeper you go in the purchase funnel, the more you see accounts with intense developer activity
 - Accounts with developer activity are at least **2x more likely** to be at the bottom of the sales funnel than at the top
-- 70& of accounts with developer activity at the bottom of funnel had a high intend score.
+- 70% of accounts with developer activity at the bottom of funnel had a high intent score.
+
+![Developer activity findings showing funnel correlation and intent scores](/blog/developer-activity-purchase-intent/what-i-found.png)
 
 ## How I analyzed this
 
@@ -105,7 +107,7 @@ Traditional intent tools track email opens and proposal views—great for busine
 
 While all this might sound logical, analyzing developer activity is genuinely hard. Most developer activities are anonymous. Developers sign up with burner emails, use their GitHub or StackOverflow identities, or evaluate your docs without signing up at all. Much of the developer experience (DX) stack is specifically designed to let developers evaluate without commitment.
 
-You need tooling to understand and triangulate developer intent which I mentioned above and double check false positive enrichments with AI. The stack requirements are real, but the payoff is visibility into that hidden 80% of your potential pipeline.
+You need tooling to understand and triangulate developer intent which I mentioned above and double check false positive enrichments with AI. The stack requirements are real, but the payoff is visibility into that hidden 70% of your potential pipeline.
 
 ![Diagram showing the tooling stack required for developer data mining](/blog/developer-activity-purchase-intent/tooling-stack.png)
 
