@@ -1,8 +1,0 @@
-{
-  "slug": "sample-dev-tooling-post",
-  "title": "Building better developer tools",
-  "date": "2024-01-15",
-  "category": "dev-tooling",
-  "excerpt": "A look at what makes developer tools great.",
-  "content": "<p>This is a sample blog post. Replace this file with your actual content.</p><h2>How to Add a Blog Post</h2><ol><li>Create a JSON file in the appropriate category folder</li><li>Use Claude Code to convert your markdown to HTML</li><li>Store images in <code>/public/blog/your-post-slug/</code></li></ol><p>Reference images like: <code>&lt;img src=\"/blog/your-post-slug/image.png\" /&gt;</code></p>"
-}

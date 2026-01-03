@@ -1,8 +1,33 @@
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
+import { marked } from "marked";
 import { BlogPost, BlogCategory } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog");
+
+function parseMarkdownPost(filePath: string): BlogPost | null {
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(fileContent);
+
+  if (!data.title || !data.date || !data.category) {
+    return null;
+  }
+
+  const slug = data.slug || path.basename(filePath, ".md");
+
+  return {
+    slug,
+    title: data.title,
+    date:
+      typeof data.date === "string"
+        ? data.date
+        : data.date.toISOString().split("T")[0],
+    category: data.category as BlogCategory,
+    excerpt: data.excerpt || "",
+    content: marked(content) as string,
+  };
+}
 
 export function getAllPosts(): BlogPost[] {
   const categories: BlogCategory[] = [
@@ -20,12 +45,13 @@ export function getAllPosts(): BlogPost[] {
 
     const files = fs.readdirSync(categoryDir);
     for (const file of files) {
-      if (!file.endsWith(".json")) continue;
+      if (!file.endsWith(".md")) continue;
 
       const filePath = path.join(categoryDir, file);
-      const content = fs.readFileSync(filePath, "utf-8");
-      const post = JSON.parse(content) as BlogPost;
-      posts.push(post);
+      const post = parseMarkdownPost(filePath);
+      if (post) {
+        posts.push(post);
+      }
     }
   }
 
